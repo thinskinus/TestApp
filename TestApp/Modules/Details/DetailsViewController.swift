@@ -53,22 +53,21 @@ class DetailsViewController: BaseViewController {
         view.addSubview(photoView)
 
         photoView.translatesAutoresizingMaskIntoConstraints = false
+        photoView.contentMode = .scaleAspectFit
         photoView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         photoView.bottomAnchor.constraint(equalTo: pickPhotoButton.topAnchor, constant: -20).isActive = true
+        photoView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 12).isActive = true
     }
 
     @objc func openPhotoPicker() {
         if AVCaptureDevice.authorizationStatus(for: AVMediaType.video) == AVAuthorizationStatus.authorized {
-            let picker = UIImagePickerController(nibName: nil, bundle: nil)
+            let picker = UIImagePickerController()
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
                 picker.sourceType = .camera
                 picker.delegate = self
-                picker.modalPresentationStyle = .fullScreen
-                picker.modalTransitionStyle = .coverVertical
-                picker.cameraCaptureMode = .photo
                 picker.allowsEditing = true
 
-                self.present(picker, animated: true, completion: nil)
+                show(picker, sender: nil)
             }
         } else {
             AVCaptureDevice.requestAccess(for: .video) { granted in
@@ -88,7 +87,9 @@ extension DetailsViewController: UINavigationControllerDelegate, UIImagePickerCo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         dismiss(animated: true, completion: nil)
         if let image = info[.originalImage] as? UIImage {
+            // update in-memory cache
             user?.replacedImage = image
+            // update current image on screen
             photoView.image = image
         }
     }

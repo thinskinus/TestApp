@@ -40,6 +40,11 @@ class ListViewController: BaseViewController {
         tableView.refreshControl?.addTarget(self, action: #selector(refreshList), for: UIControl.Event.valueChanged)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        refreshList()
+    }
+
     func updateHeader() {
         if let header = tableView.tableHeaderView as? ListHeaderView,
             let topUser = topUser {
