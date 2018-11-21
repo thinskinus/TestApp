@@ -91,6 +91,8 @@ class AppCoordinator: Coordinator {
     }
 
     @objc private func logout() {
+        InMemoryCacheManager.shared.clear()
+
         if let vc = initialVC() {
             navigationController = nil
             makeRoot(vc)

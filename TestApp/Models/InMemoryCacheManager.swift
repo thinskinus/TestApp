@@ -15,5 +15,10 @@ class InMemoryCacheManager {
 
     var authorizedUser: User?
     var friends: [User] = []
+
+    func clear() {
+        authorizedUser = nil
+        friends = []
+    }
 }
 
