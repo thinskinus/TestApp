@@ -19,7 +19,7 @@ class AuthViewController: BaseViewController {
         super.viewDidLoad()
 
         let loginButton = UIButton(type: .system)
-        loginButton.setTitle("Login", for: .normal)
+        loginButton.setTitle("Login with VK", for: .normal)
         loginButton.tintColor = .green
         loginButton.backgroundColor = .white
         loginButton.addTarget(self, action: #selector(startAuth), for: .touchUpInside)
