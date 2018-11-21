@@ -18,7 +18,7 @@ class User {
     var photoImage_S: UIImage?
     var photoUrl_L: String?
     var photoImage_L: UIImage?
-    var replacedImage: UIImage?
+    var replacingImage: UIImage?
 
     required init(from json: [String: Any]) {
         id = json["id"] as? Int
@@ -48,10 +48,10 @@ class User {
     }
 
     func imageSmall() -> UIImage? {
-        return replacedImage ?? photoImage_S
+        return replacingImage ?? photoImage_S
     }
 
     func imageLarge() -> UIImage? {
-        return replacedImage ?? photoImage_L
+        return replacingImage ?? photoImage_L
     }
 }

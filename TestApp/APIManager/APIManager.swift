@@ -67,9 +67,14 @@ class APIManager {
         if let request = VKApi.users()?.get(params) {
             request.execute(resultBlock: { response in
                 var friends: [User] = []
+                let currentFriends = InMemoryCacheManager.shared.friends
                 if let usersJSON = (response?.json as? [[String: Any]]) {
                     for item in usersJSON {
-                        friends.append(User(from: item))
+                        let parsedUser = User(from: item)
+                        if let existedUser = currentFriends.first(where: {$0.id == parsedUser.id}) {
+                            parsedUser.replacingImage = existedUser.replacingImage
+                        }
+                        friends.append(parsedUser)
                     }
                 }
                 InMemoryCacheManager.shared.friends = friends

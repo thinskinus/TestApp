@@ -88,7 +88,7 @@ extension DetailsViewController: UINavigationControllerDelegate, UIImagePickerCo
         dismiss(animated: true, completion: nil)
         if let image = info[.originalImage] as? UIImage {
             // update in-memory cache
-            user?.replacedImage = image
+            user?.replacingImage = image
             // update current image on screen
             photoView.image = image
         }
