@@ -7,3 +7,21 @@
 //
 
 import Foundation
+import UIKit
+
+extension UIImageView {
+    
+    static let defaultAvatarImage: UIImage = #imageLiteral(resourceName: "vkPlaceholder")
+
+    func downloadImageFromUrl(_ url: String,
+                              defaultImage: UIImage? = UIImageView.defaultAvatarImage,
+                              completion: @escaping (UIImage) -> Void) {
+        image = defaultImage
+        APIManager.shared.startDownloadTask(with: url) { image in
+            DispatchQueue.main.async { [weak self] in
+                self?.image = image
+            }
+            completion(image)
+        }
+    }
+}

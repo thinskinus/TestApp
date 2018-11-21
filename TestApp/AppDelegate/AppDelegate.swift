@@ -7,19 +7,32 @@
 //
 
 import UIKit
+import VKSdkFramework
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var appCoordinator: AppCoordinator?
+    var token: VKAccessToken?
+
+    var user: User?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        guard let window = self.window else { fatalError("No Window") }
-        window.rootViewController = AuthViewController()
-        window.makeKeyAndVisible()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        appCoordinator = AppCoordinator(with: window)
+
+        appCoordinator?.start()
+
+        window?.makeKeyAndVisible()
 
         return true
     }
-}
 
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        if let sourceApplication = options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String {
+            VKSdk.processOpen(url, fromApplication: sourceApplication)
+        }
+        return true
+    }
+}

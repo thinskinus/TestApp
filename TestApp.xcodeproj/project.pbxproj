@@ -7,21 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA7C784421A4633600760EE6 /* UIImageView+downloadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7C784321A4633600760EE6 /* UIImageView+downloadTask.swift */; };
+		BA7C784621A4A25500760EE6 /* InMemoryCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7C784521A4A25500760EE6 /* InMemoryCacheManager.swift */; };
+		BA9DA3F221A5707000D8ACEC /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9DA3F121A5707000D8ACEC /* DetailsViewController.swift */; };
 		BAD4547A21A1386F00B59E70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD4547921A1386F00B59E70 /* AppDelegate.swift */; };
-		BAD4547C21A1386F00B59E70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD4547B21A1386F00B59E70 /* ViewController.swift */; };
-		BAD4547F21A1386F00B59E70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD4547D21A1386F00B59E70 /* Main.storyboard */; };
+		BAD4547C21A1386F00B59E70 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD4547B21A1386F00B59E70 /* AuthViewController.swift */; };
 		BAD4548121A1387400B59E70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD4548021A1387400B59E70 /* Assets.xcassets */; };
 		BAD4548421A1387400B59E70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD4548221A1387400B59E70 /* LaunchScreen.storyboard */; };
+		BAD4549021A15EF400B59E70 /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD4548F21A15EF400B59E70 /* VKSdkFramework.framework */; };
+		BAD4549421A1624600B59E70 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD4549321A1624600B59E70 /* AppCoordinator.swift */; };
+		BAD4549821A17CA900B59E70 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD4549721A17CA900B59E70 /* ListViewController.swift */; };
+		BAD4549E21A1A0AE00B59E70 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD4549D21A1A0AE00B59E70 /* User.swift */; };
+		BAD454A121A2242000B59E70 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD454A021A2242000B59E70 /* APIManager.swift */; };
+		BAD454A421A22B3100B59E70 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD454A321A22B3100B59E70 /* BaseViewController.swift */; };
+		BAD454A621A28DCF00B59E70 /* ListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD454A521A28DCF00B59E70 /* ListViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA7C784321A4633600760EE6 /* UIImageView+downloadTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+downloadTask.swift"; sourceTree = "<group>"; };
+		BA7C784521A4A25500760EE6 /* InMemoryCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryCacheManager.swift; sourceTree = "<group>"; };
+		BA9DA3F121A5707000D8ACEC /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		BAD4547621A1386F00B59E70 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD4547921A1386F00B59E70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BAD4547B21A1386F00B59E70 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BAD4547E21A1386F00B59E70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BAD4547B21A1386F00B59E70 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		BAD4548021A1387400B59E70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAD4548321A1387400B59E70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAD4548521A1387400B59E70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAD4548F21A15EF400B59E70 /* VKSdkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VKSdkFramework.framework; path = Carthage/Build/iOS/VKSdkFramework.framework; sourceTree = "<group>"; };
+		BAD4549321A1624600B59E70 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		BAD4549721A17CA900B59E70 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		BAD4549D21A1A0AE00B59E70 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BAD454A021A2242000B59E70 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		BAD454A321A22B3100B59E70 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		BAD454A521A28DCF00B59E70 /* ListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +47,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAD4549021A15EF400B59E70 /* VKSdkFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA7C784221A4631900760EE6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BA7C784321A4633600760EE6 /* UIImageView+downloadTask.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BA9DA3F021A5703800D8ACEC /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				BA9DA3F121A5707000D8ACEC /* DetailsViewController.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		BAD4546D21A1386E00B59E70 = {
 			isa = PBXGroup;
 			children = (
 				BAD4547821A1386F00B59E70 /* TestApp */,
 				BAD4547721A1386F00B59E70 /* Products */,
+				BAD4548E21A15EF300B59E70 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +90,94 @@
 		BAD4547821A1386F00B59E70 /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
-				BAD4547921A1386F00B59E70 /* AppDelegate.swift */,
-				BAD4547B21A1386F00B59E70 /* ViewController.swift */,
-				BAD4547D21A1386F00B59E70 /* Main.storyboard */,
+				BA7C784221A4631900760EE6 /* Extensions */,
+				BAD4549F21A2240B00B59E70 /* APIManager */,
+				BAD4549521A16ADE00B59E70 /* AppDelegate */,
+				BAD4549221A161EE00B59E70 /* Coordinator */,
+				BAD4549C21A1A08700B59E70 /* Models */,
+				BAD4548B21A1396300B59E70 /* Modules */,
 				BAD4548021A1387400B59E70 /* Assets.xcassets */,
 				BAD4548221A1387400B59E70 /* LaunchScreen.storyboard */,
 				BAD4548521A1387400B59E70 /* Info.plist */,
 			);
 			path = TestApp;
+			sourceTree = "<group>";
+		};
+		BAD4548B21A1396300B59E70 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				BAD454A221A22B1B00B59E70 /* Common */,
+				BAD4548C21A13AF000B59E70 /* Auth */,
+				BAD4549621A179CB00B59E70 /* PhotoList */,
+				BA9DA3F021A5703800D8ACEC /* Details */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		BAD4548C21A13AF000B59E70 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				BAD4547B21A1386F00B59E70 /* AuthViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		BAD4548E21A15EF300B59E70 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BAD4548F21A15EF400B59E70 /* VKSdkFramework.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BAD4549221A161EE00B59E70 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				BAD4549321A1624600B59E70 /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		BAD4549521A16ADE00B59E70 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BAD4547921A1386F00B59E70 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		BAD4549621A179CB00B59E70 /* PhotoList */ = {
+			isa = PBXGroup;
+			children = (
+				BAD4549721A17CA900B59E70 /* ListViewController.swift */,
+				BAD454A521A28DCF00B59E70 /* ListViewController.storyboard */,
+			);
+			path = PhotoList;
+			sourceTree = "<group>";
+		};
+		BAD4549C21A1A08700B59E70 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BAD4549D21A1A0AE00B59E70 /* User.swift */,
+				BA7C784521A4A25500760EE6 /* InMemoryCacheManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BAD4549F21A2240B00B59E70 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				BAD454A021A2242000B59E70 /* APIManager.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		BAD454A221A22B1B00B59E70 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BAD454A321A22B3100B59E70 /* BaseViewController.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +190,8 @@
 				BAD4547221A1386F00B59E70 /* Sources */,
 				BAD4547321A1386F00B59E70 /* Frameworks */,
 				BAD4547421A1386F00B59E70 /* Resources */,
+				BAD4548D21A1529400B59E70 /* ShellScript */,
+				BAD4549121A15F7900B59E70 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -124,33 +242,71 @@
 			files = (
 				BAD4548421A1387400B59E70 /* LaunchScreen.storyboard in Resources */,
 				BAD4548121A1387400B59E70 /* Assets.xcassets in Resources */,
-				BAD4547F21A1386F00B59E70 /* Main.storyboard in Resources */,
+				BAD454A621A28DCF00B59E70 /* ListViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BAD4548D21A1529400B59E70 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/VKSdkFramework.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		BAD4549121A15F7900B59E70 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# optional: warning about outdated dependencies\n/usr/local/bin/carthage outdated --xcode-warnings\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BAD4547221A1386F00B59E70 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAD4547C21A1386F00B59E70 /* ViewController.swift in Sources */,
+				BAD4549421A1624600B59E70 /* AppCoordinator.swift in Sources */,
+				BAD454A121A2242000B59E70 /* APIManager.swift in Sources */,
+				BAD4547C21A1386F00B59E70 /* AuthViewController.swift in Sources */,
+				BA7C784421A4633600760EE6 /* UIImageView+downloadTask.swift in Sources */,
+				BA7C784621A4A25500760EE6 /* InMemoryCacheManager.swift in Sources */,
+				BAD4549821A17CA900B59E70 /* ListViewController.swift in Sources */,
+				BAD4549E21A1A0AE00B59E70 /* User.swift in Sources */,
+				BAD454A421A22B3100B59E70 /* BaseViewController.swift in Sources */,
 				BAD4547A21A1386F00B59E70 /* AppDelegate.swift in Sources */,
+				BA9DA3F221A5707000D8ACEC /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BAD4547D21A1386F00B59E70 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BAD4547E21A1386F00B59E70 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BAD4548221A1387400B59E70 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -284,12 +440,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5KYLBM3T5U;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lena.TestApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lena.test2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -302,12 +463,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5KYLBM3T5U;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lena.TestApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lena.test2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

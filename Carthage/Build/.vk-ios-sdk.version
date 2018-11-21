@@ -1,0 +1,9 @@
+{
+  "commitish" : "1.4.6",
+  "iOS" : [
+    {
+      "name" : "VKSdkFramework",
+      "hash" : "bd4325b10d9a409c07955bd98a13b55d3ec58858056c9edc9c687f782873881d"
+    }
+  ]
+}
