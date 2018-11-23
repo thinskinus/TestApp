@@ -11,6 +11,12 @@ import VKSdkFramework
 
 protocol AuthDelegate: class {
     func keepToken(_ token: VKAccessToken)
+    func logout()
+}
+
+protocol DataLoader {
+    func requestUserData(completion: @escaping (User?, [User]) -> Void)
+    func requestList(completion: @escaping (User?, [User]) -> Void)
 }
 
 class APIManager {
@@ -21,6 +27,8 @@ class APIManager {
 
     var userToken: VKAccessToken?
 
+    var memoryCache: InMemoryCacheManager = InMemoryCacheManager()
+
     private func params() -> [AnyHashable: Any] {
         if let accessToken = userToken?.accessToken {
             return ["access_token" : accessToken]
@@ -29,45 +37,15 @@ class APIManager {
         }
     }
 
-    func requestUserData(completion: @escaping (User?, [User]) -> Void) {
-        var params = self.params()
-        params["fields"] = ["photo_id", "photo_50", "nickname"]
-
-        if let request = VKApi.users()?.get(params) {
-            request.execute(resultBlock: { [unowned self] response in
-                if let userjson = (response?.json as? [[String: Any]])?.first {
-                    InMemoryCacheManager.shared.authorizedUser = User(from: userjson)
-                    self.requestList(completion: completion)
-                }
-            }) { error in
-                print ("error accessing user data \(error?.localizedDescription ?? "no data")")
-            }
-        }
-    }
-
-    func requestList(completion: @escaping (User?, [User]) -> Void) {
-        if let friendsRequest = VKApi.friends()?.get(params()) {
-            friendsRequest.execute(resultBlock: { [unowned self] response in
-                if let data = (response?.json as? [String: Any]) {
-                    if let ids = data["items"] as? [Int] {
-                        self.requestFriendsData(user_ids: ids, completion: completion)
-                    }
-                }
-            }) { error in
-                print ("error accessing user data \(error?.localizedDescription ?? "no data")")
-            }
-        }
-    }
-
-    func requestFriendsData(user_ids: [Int], completion: @escaping (User?, [User]) -> Void) {
+    private func requestFriendsData(user_ids: [Int], completion: @escaping (User?, [User]) -> Void) {
         var params = self.params()
         params["user_ids"] = user_ids
         params["fields"] = ["photo_id", "photo_50", "photo_200_orig", "nickname"]
 
         if let request = VKApi.users()?.get(params) {
-            request.execute(resultBlock: { response in
+            request.execute(resultBlock: { [unowned self] response in
                 var friends: [User] = []
-                let currentFriends = InMemoryCacheManager.shared.friends
+                let currentFriends = self.memoryCache.friends
                 if let usersJSON = (response?.json as? [[String: Any]]) {
                     for item in usersJSON {
                         let parsedUser = User(from: item)
@@ -77,8 +55,8 @@ class APIManager {
                         friends.append(parsedUser)
                     }
                 }
-                InMemoryCacheManager.shared.friends = friends
-                completion(InMemoryCacheManager.shared.authorizedUser, friends)
+                self.memoryCache.friends = friends
+                completion(self.memoryCache.authorizedUser, friends)
             }) { error in
                 print ("error accessing user data \(error?.localizedDescription ?? "no data")")
             }
@@ -102,10 +80,46 @@ class APIManager {
 
         }).resume()
     }
+
+    func logout() {
+        memoryCache.clear()
+    }
 }
 
 extension APIManager: AuthDelegate {
     func keepToken(_ token: VKAccessToken) {
         userToken = token
+    }
+}
+
+extension APIManager: DataLoader {
+    func requestUserData(completion: @escaping (User?, [User]) -> Void) {
+        var params = self.params()
+        params["fields"] = ["photo_id", "photo_50", "nickname"]
+
+        if let request = VKApi.users()?.get(params) {
+            request.execute(resultBlock: { [unowned self] response in
+                if let userjson = (response?.json as? [[String: Any]])?.first {
+                    self.memoryCache.authorizedUser = User(from: userjson)
+                    self.requestList(completion: completion)
+                }
+            }) { error in
+                print ("error accessing user data \(error?.localizedDescription ?? "no data")")
+            }
+        }
+    }
+
+    func requestList(completion: @escaping (User?, [User]) -> Void) {
+        if let friendsRequest = VKApi.friends()?.get(params()) {
+            friendsRequest.execute(resultBlock: { [unowned self] response in
+                if let data = (response?.json as? [String: Any]) {
+                    if let ids = data["items"] as? [Int] {
+                        self.requestFriendsData(user_ids: ids, completion: completion)
+                    }
+                }
+            }) { error in
+                print ("error accessing user data \(error?.localizedDescription ?? "no data")")
+            }
+        }
     }
 }

@@ -9,10 +9,6 @@
 import Foundation
 
 class InMemoryCacheManager {
-
-    static let shared = InMemoryCacheManager()
-    private init() {}
-
     var authorizedUser: User?
     var friends: [User] = []
 

@@ -23,11 +23,13 @@ protocol Coordinator: class {
 class AppCoordinator: Coordinator {
 
     weak var window: UIWindow?
+    var apiManager: (AuthDelegate & DataLoader)!
 
     var navigationController: UINavigationController?
 
-    init(with window: UIWindow?) {
+    init(with window: UIWindow?, apiManager: (AuthDelegate & DataLoader)) {
         self.window = window
+        self.apiManager = apiManager
     }
 
     /// Start presenting
@@ -41,7 +43,7 @@ class AppCoordinator: Coordinator {
     private func initialVC() -> UIViewController? {
         let vc = AuthViewController()
         vc.coordinator = self
-        vc.authDelegate = APIManager.shared
+        vc.authDelegate = apiManager
         return vc
     }
 
@@ -51,7 +53,7 @@ class AppCoordinator: Coordinator {
         }
         vc.coordinator = self
 
-        APIManager.shared.requestUserData { user, friends in
+        apiManager.requestUserData { user, friends in
             vc.topUser = user
             vc.users = friends
         }
@@ -66,7 +68,7 @@ class AppCoordinator: Coordinator {
     }
 
     func reloadList(completion: @escaping ([User]) -> Void) {
-        APIManager.shared.requestList { _, friends in
+        apiManager.requestList { _, friends in
             completion(friends)
         }
     }
@@ -91,7 +93,7 @@ class AppCoordinator: Coordinator {
     }
 
     @objc private func logout() {
-        InMemoryCacheManager.shared.clear()
+        apiManager.logout()
 
         if let vc = initialVC() {
             navigationController = nil
