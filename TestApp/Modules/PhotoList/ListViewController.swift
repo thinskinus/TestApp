@@ -118,7 +118,7 @@ extension ListViewController: UITableViewDataSourcePrefetching {
             let user = users[i]
             if user.imageSmall() == nil {
                 if let imageUrl = user.photoUrl_S {
-                    APIManager.shared.startDownloadTask(with: imageUrl, completion: { image in
+                    ImageLoader.startDownloadTask(with: imageUrl, completion: { image in
                         user.photoImage_S = image
                     })
                 }

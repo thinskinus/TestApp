@@ -42,12 +42,9 @@ class DetailsViewController: BaseViewController {
             } else {
                 photoView.image = nil
                 if let imageUrl = user.photoUrl_L {
-                    photoView.downloadImageFromUrl(imageUrl, completion: { [user] image in
-                        DispatchQueue.main.async { [weak self] in
-                            self?.photoView.image = image
-                        }
+                    photoView.downloadImageFromUrl(imageUrl) { image in
                         user.photoImage_L = image
-                    })
+                    }
                 }
             }
         }

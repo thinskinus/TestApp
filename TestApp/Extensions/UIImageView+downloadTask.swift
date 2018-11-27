@@ -17,7 +17,7 @@ extension UIImageView {
                               defaultImage: UIImage? = UIImageView.defaultAvatarImage,
                               completion: @escaping (UIImage) -> Void) {
         image = defaultImage
-        APIManager.shared.startDownloadTask(with: url) { image in
+        ImageLoader.startDownloadTask(with: url) { [weak self] image in
             DispatchQueue.main.async { [weak self] in
                 self?.image = image
             }

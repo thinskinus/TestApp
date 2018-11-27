@@ -21,6 +21,7 @@
 		BAD454A121A2242000B59E70 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD454A021A2242000B59E70 /* APIManager.swift */; };
 		BAD454A421A22B3100B59E70 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD454A321A22B3100B59E70 /* BaseViewController.swift */; };
 		BAD454A621A28DCF00B59E70 /* ListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD454A521A28DCF00B59E70 /* ListViewController.storyboard */; };
+		BAE8ECEB21ABFCF600EAD660 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE8ECEA21ABFCF600EAD660 /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		BAD454A021A2242000B59E70 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		BAD454A321A22B3100B59E70 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BAD454A521A28DCF00B59E70 /* ListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListViewController.storyboard; sourceTree = "<group>"; };
+		BAE8ECEA21ABFCF600EAD660 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				BAD454A021A2242000B59E70 /* APIManager.swift */,
+				BAE8ECEA21ABFCF600EAD660 /* ImageLoader.swift */,
 			);
 			path = APIManager;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				BAD4547C21A1386F00B59E70 /* AuthViewController.swift in Sources */,
 				BA7C784421A4633600760EE6 /* UIImageView+downloadTask.swift in Sources */,
 				BA7C784621A4A25500760EE6 /* InMemoryCacheManager.swift in Sources */,
+				BAE8ECEB21ABFCF600EAD660 /* ImageLoader.swift in Sources */,
 				BAD4549821A17CA900B59E70 /* ListViewController.swift in Sources */,
 				BAD4549E21A1A0AE00B59E70 /* User.swift in Sources */,
 				BAD454A421A22B3100B59E70 /* BaseViewController.swift in Sources */,

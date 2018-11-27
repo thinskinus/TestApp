@@ -21,10 +21,6 @@ protocol DataLoader {
 
 class APIManager {
 
-    static let shared: APIManager = APIManager()
-
-    private init() {}
-
     var userToken: VKAccessToken?
 
     var memoryCache: InMemoryCacheManager = InMemoryCacheManager()
@@ -61,24 +57,6 @@ class APIManager {
                 print ("error accessing user data \(error?.localizedDescription ?? "no data")")
             }
         }
-    }
-
-    func startDownloadTask(with url: String, completion: @escaping (UIImage) -> Void) {
-        guard let url = URL(string: url) else { return }
-        URLSession.shared.dataTask(with: url,
-                                   completionHandler: { (data, response, error) -> Void in
-                                    guard let httpURLResponse = response as? HTTPURLResponse,
-                                        let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                                        let data = data,
-                                        let image = UIImage(data: data),
-                                        error == nil,
-                                        httpURLResponse.statusCode == 200
-                                        else {
-                                            return
-                                    }
-                                    completion(image)
-
-        }).resume()
     }
 
     func logout() {
